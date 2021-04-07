@@ -1,0 +1,127 @@
+body{
+    background-color: rgba(229, 229, 229, 1);
+}
+
+.contenedor{
+    position: relative;
+    height: 80vh;
+    width: 80vw;
+    min-width: 500px;
+    min-height: 650px;
+    left: 10vw;
+    top: 10vh;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 4px 8px 4px rgba(0,0,0,0.1);
+}
+
+.center{
+    text-align: center;
+}
+/*-------------------------------------------------------------------------*/
+
+/*Estilos página principal*/
+.titulo_pr{
+    padding-top: 15vh;
+}
+
+.bienvenida_pr{
+    padding: 5vh 10vw;
+}
+
+.btn_pr{
+    width: 15vw;
+    height: 80px;
+    margin: 2vw;
+    /*padding: 0.1rem 0.5rem;*/
+    font-size: 16px;
+    border-radius: 30px;
+}
+/*-------------------------------------------------------------------------*/
+
+/*Estilos encabezado (Menús)*/
+.titulo_en{
+    padding: 1rem 0rem;
+}
+
+.titulo_en h1{
+    font-size: 28px;
+}
+
+.btn_en{
+    width: 6rem;
+    margin-left: 2vw;
+    border-radius: 30px;
+}
+
+hr{
+    color: #0d6efd;
+}
+/*-------------------------------------------------------------------------*/
+
+/*Estilos página seleccion de rutas*/
+.cont_form{
+    position: relative;
+    height: 50vh;
+    width: 50vw;
+    min-width: 300px;
+    min-height: 450px;
+    left: 15vw;
+    right: 15vw;
+    margin-top: 30px;
+    border: 1px solid #0d6efd;
+    border-radius: 30px;
+}
+
+.items-form{
+    padding-top: 15px;
+}
+
+.items-form hr{
+    margin: 0px 20px;
+}
+
+.items-form input, select{
+    border-radius: 5px;
+    height: 2rem;
+    border: 1px solid #0d6efd;
+}
+
+.button-form{
+    padding-top: 10vh;
+}
+
+.button-form_be{
+    padding-top: 5vh;
+}
+
+.button-form input{
+    margin-left: 30px;
+}
+/*-------------------------------------------------------------------------*/
+
+/*Estilos página Beneficio total esperado*/
+
+
+
+
+
+/*-------------------------------------------------------------------------*/
+
+/*Estilos de pantalla opciones del simulador financiero*/
+.cont_form_sf{
+    position: relative;
+    height: 30vh;
+    width: 50vw;
+    min-width: 300px;
+    min-height: 200px;
+    left: 15vw;
+    right: 15vw;
+    margin-top: 30px;
+    border: 1px solid #0d6efd;
+    border-radius: 30px;
+}
+
+.button-form_sf{
+    padding-top: 10vh;
+}

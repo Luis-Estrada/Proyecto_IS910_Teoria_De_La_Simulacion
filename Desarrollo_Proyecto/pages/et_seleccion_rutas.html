@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    
+    <!-- Css propios -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <title>Seleccion de rutas</title>
+</head>
+<body>
+    <Div class="contenedor ">
+        <div>
+            <div class="titulo_en center"><h1>Empresa de Transporte</h1></div>
+            <div>
+                <a href="../index.html">
+                    <button class="btn btn_en btn-primary">Menú</button>
+                </a>
+                <button class="btn btn_en btn-primary">Ayuda</button>
+            </div>
+            <hr>
+        </div>
+        <div class="cont_form center">
+            <form action="">
+                <div class="items-form">
+                    <label class="col-5" for="ruta">Seleccionar Ruta</label>
+                    <select class="col-5 " name="ruta" id="ruta"></select>
+                </div><br>
+                <div class="items-form">
+                    <label for="">Cantidad de Pasajeros</label>
+                    <hr>
+                </div>
+                <div class="items-form">
+                    <label for="primeraclase" class="col-5">Primera clase</label>
+                    <input id="primeraclase" type="text" class="col-5">
+                </div>
+                <div class="items-form">
+                    <label for="normal" class="col-5">Normal</label>
+                    <input id="normal" type="text" class="col-5">
+                </div>
+                <div class="items-form">
+                    <label for="niños" class="col-5">Niños</label>
+                    <input id="niños" type="text" class="col-5">
+                </div>
+                <div class="items-form">
+                    <label for="terceraedad" class="col-5">Tercera Edad</label>
+                    <input id="terceraedad" type="text" class="col-5">
+                </div>
+                <div class="button-form row">
+                    <div class="col-6">
+                        <input class="btn btn_en btn-primary" type="button" value="Limpiar">
+                    </div>
+                    <div class="col-6">
+                        <input class="btn btn_en btn-primary" type="button" value="Calcular">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </Div>
+</body>
+</html>
