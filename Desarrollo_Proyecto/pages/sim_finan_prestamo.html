@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    
+    <!-- Css propios -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <title>Mensualidad Préstamo</title>
+</head>
+<body>
+    <Div class="contenedor ">
+        <div>
+            <div class="titulo_en center"><h1>Simulador Financiero</h1></div>
+            <div>
+                <a href="../index.html">
+                    <button class="btn btn_en btn-primary">Menú</button>
+                </a>
+
+                <button class="btn btn_en btn-primary">Ayuda</button>
+
+                <a href="sim_finan_principal.html">
+                    <button class="btn btn_en btn-primary">Opciones</button>
+                </a>
+            </div>
+            <hr>
+        </div>
+        <div>
+            <div class="center">
+                <h5>Mensualidad de un Préstamo</h5>
+                <p>Mediante el presente simulador podrá saber cuánto deberá pagar cada mes en un determinado préstamo.</p>
+            </div>
+            <div class="cont_form_prest center">
+                <form action="">
+                    <div class="items-form ">
+                        <label class="Col-3" for="cap_inicial">Capital Inicial</label>
+                        <input class="Col-3" type="text" id="cap_inicial">
+                        <select class="Col-3" name="" id="">
+                            <option value=""> L. </option>
+                            <option value=""> &dollar; </option>
+                            <option value=""> &euro; </option>
+                        </select>
+                    </div>
+                    <div class="items-form">
+                        <label class="Col-5" for="ina">Tipo de INA</label>
+                        <input class="Col-5" type="text" id="ina">
+                        <select class="Col-2" name="" id="" disabled>
+                            <option value="" selected>%</option>
+                        </select>
+                        <!--<label class="Col-3" for="">%</label>-->
+                    </div>
+                    <div class="items-form">
+                        <label class="" for="plazo">Plazo</label>
+                        <input class="" type="text" id="plazo">
+                        <select class="" name="" id="">
+                            <option value="">Años</option>
+                            <option value="">Meses</option>
+                        </select>
+                    </div>
+                    <div class="items-form">
+                        <button class="btn btn_en btn-primary" type="button">Calcular</button>
+                    </div>
+                </form>
+            </div>
+            <br>
+            <div class="tabla_amortizacion center">
+                <div class="items-form">
+                    <label for="">Tabla de Amortización</label>
+                    <hr>
+                </div>
+                <br>
+                <div class="">
+                    <!-- Datos de ejemplo -->
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Mensualidad</th>
+                            <th scope="col">Cuota</th>
+                            <th scope="col">Interese</th>
+                            <th scope="col">Capital</th>
+                            <th scope="col">Capital Pendiente</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>10000</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>438.71</td>
+                            <td>41.67</td>
+                            <td>397.04</td>
+                            <td>9602.96</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>438.71</td>
+                            <td>40.01</td>
+                            <td>398.7</td>
+                            <td>9204.26</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                  <div class="col align-self-start"></div>
+                  <div class="col align-self-center"></div>
+                  <div class="col align-self-end">
+                    <button class="btn btn_en btn-primary col-6" type="button" >Limpiar</button>
+                  </div>
+                </div>
+            </div>
+            <br>
+        </div>
+    </Div>
+</body>
+</html>

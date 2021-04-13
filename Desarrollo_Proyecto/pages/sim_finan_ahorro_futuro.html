@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    
+    <!-- Css propios -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/grafico.css">
+
+    <!--JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <title>Ahorro Fututo</title>
+</head>
+<body>
+    <Div class="contenedor ">
+        <div>
+            <div class="titulo_en center"><h1>Empresa de Transporte</h1></div>
+            <div>
+                <a href="../index.html">
+                    <button class="btn btn_en btn-primary">Menú</button>
+                </a>
+
+                <button class="btn btn_en btn-primary">Ayuda</button>
+
+                <a href="sim_finan_principal.html">
+                    <button class="btn btn_en btn-primary">Opciones</button>
+                </a>
+            </div>
+            <hr>
+        </div>
+        <div class="">
+            <div class="center">
+                <h5>Ahorro a Futuro</h5>
+                <p>Mediante el presente simulador podrá saber conocer el correspondiente interés que se espera obtener en un período determinado.</p>
+            </div>
+            <div class="row">
+                <div class="col-7">
+                    <div class="cont_form_futuro center">
+                        <form action="">
+                            <div class="items-form ">
+                                <label class="Col-3" for="cap_inicial">Capital Inicial</label>
+                                <input class="Col-3" type="text" id="cap_inicial">
+                                <select class="Col-3" name="" id="">
+                                    <option value=""> L. </option>
+                                    <option value=""> &dollar; </option>
+                                    <option value=""> &euro; </option>
+                                </select>
+                            </div>
+                            <div class="items-form">
+                                <label class="" for="plazo">Plazo</label>
+                                <input class="" type="text" id="plazo">
+                                <select class="" name="" id="">
+                                    <option value="">Años</option>
+                                    <option value="">Meses</option>
+                                </select>
+                            </div>
+                            <div class="items-form row">
+                                <div class="col-2"></div>
+                                <div class="col-4">
+                                    <button class="btn btn_en btn-primary" type="button">Interés Simple</button>
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn btn_en btn-primary" type="button">Interés Compuesto</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <br>
+                    <div class="tabla_comparativa center">
+                        <div class="items-form">
+                            <label for="">Tabla Comparativa</label>
+                            <hr>
+                        </div>
+                        <br>
+                        <div class="">
+                            <!-- Datos de ejemplo -->
+                            <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Banco</th>
+                                    <th scope="col">Capital Inicial</th>
+                                    <th scope="col">Tasa</th>
+                                    <th scope="col">Interés</th>
+                                    <th scope="col">Valor Futuro</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Banco 1</td>
+                                    <td>1000.00</td>
+                                    <td>5%</td>
+                                    <td>50.00</td>
+                                    <td>1050.00</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Banco 2</td>
+                                    <td>1000.00</td>
+                                    <td>7%</td>
+                                    <td>70.00</td>
+                                    <td>1070.00</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Banco 3</td>
+                                    <td>1000.00</td>
+                                    <td>10%</td>
+                                    <td>100.00</td>
+                                    <td>1100.00</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Banco 4</td>
+                                    <td>1000.00</td>
+                                    <td>15%</td>
+                                    <td>150</td>
+                                    <td>1150.00</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <!--Grafica comparativa-->
+                    <div class="container">
+                        <h6>Tabla Comparativa</h6>
+                        <div class="bar-chart">
+                            <!-- legend label -->
+                            <div class="legend">
+                                <div class="label">
+                                    <h4>50.00</h4>
+                                </div>
+                                <div class="label">
+                                    <h4>100.00</h4>
+                                </div>
+                                <div class="label">
+                                    <h4>100.00</h4>
+                                </div>
+                                <div class="label last">
+                                    <h4>150.00</h4>
+                                </div>
+                            </div>
+                            
+                            <!-- bars -->
+                            <div class="chart clearfix">
+                                <div class="item">
+                                    <div class="bar">
+                                        <span class="percent">25%</span>
+                        
+                                        <div class="progress" data-percent="25">
+                                            <span class="title">Banco 1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="item">
+                                    <div class="bar">
+                                        <span class="percent">50%</span>
+                        
+                                        <div class="progress" data-percent="50">
+                                            <span class="title">Banco 2</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="item">
+                                    <div class="bar">
+                                        <span class="percent">75%</span>
+                        
+                                        <div class="progress" data-percent="75">
+                                            <span class="title">Banco 3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <div class="item">
+                                    <div class="bar">
+                                        <span class="percent">100%</span>
+                        
+                                        <div class="progress" data-percent="100">
+                                            <span class="title">Banco 4</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                  <div class="col align-self-start"></div>
+                  <div class="col align-self-center"></div>
+                  <div class="col align-self-end">
+                    <button class="btn btn_en btn-primary col-6" type="button" >Limpiar</button>
+                  </div>
+                </div>
+            </div>
+            <br>
+        </div>
+    </Div>
+    <script>
+        $(document).ready(function(){
+            barChart();
+            
+            $(window).resize(function(){
+                barChart();
+            });
+            
+            function barChart(){
+                $('.bar-chart').find('.progress').each(function(){
+                    var itemProgress = $(this),
+                    itemProgressWidth = $(this).parent().width() * ($(this).data('percent') / 100);
+                    itemProgress.css('width', itemProgressWidth);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

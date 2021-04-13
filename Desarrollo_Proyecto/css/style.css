@@ -4,12 +4,12 @@ body{
 
 .contenedor{
     position: relative;
-    height: 80vh;
+    /*height: 80vh;*/
     width: 80vw;
     min-width: 500px;
     min-height: 650px;
     left: 10vw;
-    top: 10vh;
+    top: 5vh;
     border-radius: 30px;
     background-color: #fff;
     box-shadow: 4px 8px 4px rgba(0,0,0,0.1);
@@ -18,6 +18,15 @@ body{
 .center{
     text-align: center;
 }
+/*-------------------------------------------------------------------------*/
+/*Estilos directos*/
+#contenedor_pag_princ{
+    min-height: 550px !important;
+}
+#contenedor_sim_finan{
+    min-height: 550px !important;
+}
+
 /*-------------------------------------------------------------------------*/
 
 /*Estilos página principal*/
@@ -75,6 +84,7 @@ hr{
 
 .items-form{
     padding-top: 15px;
+    align-items: center;
 }
 
 .items-form hr{
@@ -117,7 +127,7 @@ hr{
     min-height: 200px;
     left: 15vw;
     right: 15vw;
-    margin-top: 30px;
+    margin-top: 20px;
     border: 1px solid #0d6efd;
     border-radius: 30px;
 }
@@ -125,3 +135,70 @@ hr{
 .button-form_sf{
     padding-top: 10vh;
 }
+
+/*-------------------------------------------------------------------------*/
+
+/*Estilos de pantalla opciones del simulador financiero - Préstamos*/
+.cont_form_prest{
+    position: relative;
+    width: 50vw;
+    min-width: 300px;
+    left: 15vw;
+    right: 15vw;
+    margin-top: 10px;
+}
+
+.cont_form_prest label{
+    width: 10vw !important;
+}
+
+.cont_form_prest input{
+    width: 12vw !important;
+}
+
+.cont_form_prest select{
+    width: 5vw !important;
+}
+
+.tabla_amortizacion{
+    width: 80vw;
+    padding: 0px 10vw;
+    align-items: center;
+}
+
+
+/*-------------------------------------------------------------------------*/
+
+/*Estilos de pantalla opciones del simulador financiero - Ahorro Futuro*/
+.cont_form_futuro{
+    position: relative;
+    width: 50vw;
+    min-width: 300px;
+    /*left: 15vw;
+    right: 15vw;*/
+    /*margin-top: 10px;*/
+}
+
+.cont_form_futuro label{
+    width: 10vw !important;
+}
+
+.cont_form_futuro input{
+    width: 12vw !important;
+}
+
+.cont_form_futuro select{
+    width: 5vw !important;
+}
+
+.cont_form_futuro .btn_en{
+    width: 10rem;
+    border-radius: 30px;
+}
+
+.tabla_comparativa{
+    padding: 0px 20px;
+    border: #000;
+}
+
+
