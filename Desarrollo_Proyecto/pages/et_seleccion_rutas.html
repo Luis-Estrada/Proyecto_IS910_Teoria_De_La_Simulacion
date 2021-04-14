@@ -32,10 +32,15 @@
             <hr>
         </div>
         <div class="cont_form center">
-            <form action="">
+            <form action="et_resultado_rutas_graficasv1.php" method="post">
                 <div class="items-form">
                     <label class="col-5" for="ruta">Seleccionar Ruta</label>
-                    <select class="col-5 " name="ruta" id="ruta"></select>
+                    <select class="col-5 " name="ruta" id="ruta">
+                        <option>Ruta 1</option>
+                        <option>Ruta 2</option>
+                        <option>Ruta 3 </option>
+                    </select>
+
                 </div><br>
                 <div class="items-form">
                     <label for="">Cantidad de Pasajeros</label>
@@ -43,27 +48,27 @@
                 </div>
                 <div class="items-form">
                     <label for="primeraclase" class="col-5">Primera clase</label>
-                    <input id="primeraclase" type="text" class="col-5">
+                    <input id="primeraclase" name="primeraclase" type="text" class="col-5">
                 </div>
                 <div class="items-form">
                     <label for="normal" class="col-5">Normal</label>
-                    <input id="normal" type="text" class="col-5">
+                    <input id="normal" name="normal" type="text" class="col-5">
                 </div>
                 <div class="items-form">
                     <label for="niños" class="col-5">Niños</label>
-                    <input id="niños" type="text" class="col-5">
+                    <input id="niños" name ="niños" type="text" class="col-5">
                 </div>
                 <div class="items-form">
                     <label for="terceraedad" class="col-5">Tercera Edad</label>
-                    <input id="terceraedad" type="text" class="col-5">
+                    <input id="terceraedad" name= "terceraedad" type="text" class="col-5">
                 </div>
                 <div class="button-form row">
                     <div class="col-6">
                         <input class="btn btn_en btn-primary" type="button" value="Limpiar">
                     </div>
                     <div class="col-6">
-                        <input class="btn btn_en btn-primary" type="button" value="Calcular">
-                    </div>
+                        <!-- <input class="btn btn_en btn-primary" type="button" value="Calcular"> -->
+                        <input class="btn btn_en btn-primary" type="submit"  value="Calcular"/>
                 </div>
             </form>
         </div>
