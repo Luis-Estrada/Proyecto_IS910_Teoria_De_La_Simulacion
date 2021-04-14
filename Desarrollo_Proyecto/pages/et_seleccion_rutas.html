@@ -32,35 +32,48 @@
                     <select class="col-5 " name="ruta" id="ruta"></select>
                 </div><br>
                 <div class="items-form">
+                    <label class="col-5" for="bus">Seleccionar Ruta</label>
+                    <select class="col-5 " name="bus" id="bus">
+                        <option value="46">Bus para 46 pasajeros</option>
+                        <option value="56">Bus para 56 pasajeros</option>
+                    </select>
+                </div><br>
+                <div class="items-form">
                     <label for="">Cantidad de Pasajeros</label>
                     <hr>
                 </div>
                 <div class="items-form">
                     <label for="primeraclase" class="col-5">Primera clase</label>
-                    <input id="primeraclase" type="text" class="col-5">
+                    <input id="primeraclase" type="number" class="col-5" min="0" max="10" value="0">
                 </div>
                 <div class="items-form">
                     <label for="normal" class="col-5">Normal</label>
-                    <input id="normal" type="text" class="col-5">
+                    <input id="normal" type="number" class="col-5" min="0" value="0">
                 </div>
                 <div class="items-form">
                     <label for="niños" class="col-5">Niños</label>
-                    <input id="niños" type="text" class="col-5">
+                    <input id="niños" type="number" class="col-5" min="0" value="0">
                 </div>
                 <div class="items-form">
                     <label for="terceraedad" class="col-5">Tercera Edad</label>
-                    <input id="terceraedad" type="text" class="col-5">
+                    <input id="terceraedad" type="number" class="col-5" min="0" value="0">
                 </div>
                 <div class="button-form row">
                     <div class="col-6">
-                        <input class="btn btn_en btn-primary" type="button" value="Limpiar">
+                        <input class="btn btn_en btn-primary" type="button" value="Limpiar" onclick="limpiar();">
                     </div>
                     <div class="col-6">
-                        <input class="btn btn_en btn-primary" type="button" value="Calcular">
+                        <input class="btn btn_en btn-primary" type="button" value="Calcular" onclick="calcular();">
                     </div>
                 </div>
             </form>
         </div>
     </Div>
+
+    <!-- Sweet alert scripts -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Sweet Alert scripts -->
+
+    <script src="../js/controlador_rutas.js"></script>
 </body>
 </html>
