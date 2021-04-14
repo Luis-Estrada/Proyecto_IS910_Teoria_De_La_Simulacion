@@ -59,8 +59,13 @@
                 </div>
             </div>
             <div>
-                <br><br><br><br><br><br>
-                Grafico
+                <div class="cont_form center">
+                        <!--Graficas-->
+                        <canvas id="myChart" width="400" height="230"></canvas>
+                        <?php
+                          include_once("../pages/graficos.php");
+                          ?>
+                </div>
             </div>
             <!--<div class="button-form_be">
                 <input class="btn btn_en btn-primary" type="button" value="Nuevo">

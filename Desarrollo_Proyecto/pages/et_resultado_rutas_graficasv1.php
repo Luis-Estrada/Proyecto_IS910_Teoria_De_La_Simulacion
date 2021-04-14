@@ -31,7 +31,7 @@
             <hr>
         </div>
         <div class="cont_form center">
-                <!-- // Use Morris.Bar-->
+                <!--Graficas -->
                 <canvas id="myChart" width="400" height="230"></canvas>
                 <?php
                   include_once("../pages/graficos.php");
