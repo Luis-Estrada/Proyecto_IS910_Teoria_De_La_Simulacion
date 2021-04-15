@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.css">
-    
+
     <!-- Css propios -->
     <link rel="stylesheet" href="../css/style.css">
-    
+
+    <!--JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+
+    <!--Graficas  -->
+    <script  type="text/javascript" src="../js/chart.min.js" charset="utf-8"></script>
+
     <title>Beneficio total esperado</title>
 </head>
 <body>
@@ -21,47 +28,354 @@
                 <a href="../index.html">
                     <button class="btn btn_en btn-primary">Menú</button>
                 </a>
-                <button class="btn btn_en btn-primary">Ayuda</button>
+                <button type="button" class="btn btn_en btn-primary" data-bs-toggle="modal" data-bs-target="#informacion">
+                    Ayuda
+                </button>
             </div>
             <hr>
         </div>
         <div class="center row">
-            <div class="col-4">
-                <div class="items-form">
-                    <label for="">Ingresos totales</label>
-                    <hr>
-                </div>
-                <div class="items-form">
-                    <input id="ingresos" type="text" class="col-6">
-                </div>
+              <div class="cont_form center">
+                <!--Graficas-->
+                <canvas id="myChart" width="400" height="210"></canvas>
+                  <script>
+                  var nombreRuta =" ";
+                  var ingresos;
+                  var gastoVariable;
+                  var gastoFijo;
+                  var beneficioEsperado;
+                  var ingresosTotal=0;
+                  var gastoVariableTotal=0;
+                  var gastoFijoTotal=0;
+                  var beneficioEsperadoTotal=0;
+
+                    if (localStorage.getItem("calculos")) {
+                        let   calculos= JSON.parse(localStorage.getItem("calculos"));
+                        console.log(calculos.length);
+
+                        for (let i = 0; i < calculos.length; i++) {
+                          nombreRuta += calculos[i].nombreRuta;
+                          console.log(ingresosTotal);
+                        }
+
+                        for (let i = 0; i < calculos.length; i++) {
+                          ingresosTotal+= calculos[i].ingresos;
+                          console.log(ingresosTotal);
+                        }
+
+                        for (let i = 0; i < calculos.length; i++) {
+                          gastoVariableTotal+= calculos[i].gastoVariable;
+                          console.log(gastoVariableTotal);
+                        }
+
+                        for (let i = 0; i < calculos.length; i++) {
+                          gastoFijoTotal+= calculos[i].gastoFijo;
+                          console.log(gastoFijoTotal);
+                        }
+
+                        for (let i = 0; i < calculos.length; i++) {
+                          beneficioEsperadoTotal+= calculos[i].beneficioEsperado;
+                          console.log(beneficioEsperadoTotal);
+                        }
+                    }else{
+                      console.log("Error no reconoce el objeto calculos");
+                    }
+
+                  var ctx = document.getElementById('myChart').getContext('2d');
+                  var myChart = new Chart(ctx, {
+                      type: 'bar',
+                      data: {
+                          labels: ['Ingresos', 'Gasto Variable', 'Gasto Fijo', 'Beneficio Esperado'],
+                          datasets: [{
+                              label: nombreRuta,
+                              data: [ingresosTotal, gastoVariableTotal, gastoFijoTotal, beneficioEsperadoTotal],
+                              backgroundColor: [
+                                  'rgba(255, 99, 132, 0.2)',
+                                  'rgba(54, 162, 235, 0.2)',
+                                  'rgba(255, 206, 86, 0.2)',
+                                  'rgba(75, 192, 192, 0.2)'
+                              ],
+                              borderColor: [
+                                  'rgba(255, 99, 132, 1)',
+                                  'rgba(54, 162, 235, 1)',
+                                  'rgba(255, 206, 86, 1)',
+                                  'rgba(75, 192, 192, 1)'
+                              ],
+                              borderWidth: 1
+                          }]
+                      },
+                      options: {
+                          scales: {
+                              y: {
+                                  beginAtZero: true
+                              }
+                          }
+                      }
+                  });
+              </script>
+              </div>
             </div>
-            <div class="col-4">
-                <div class="items-form">
-                    <label for="">Gastos totales invertidos</label>
-                    <hr>
-                </div>
-                <div class="items-form">
-                    <input id="gasto_variable" type="text" class="col-6">
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="items-form">
-                    <label for="">Beneficio total esperado</label>
-                    <hr>
-                </div>
-                <div class="items-form">
-                    <input id="beneficio" type="text" class="col-6">
-                </div>
-            </div>
-            <div>
-                <br><br><br><br><br><br>
-                Grafico
-            </div>
-            <!--<div class="button-form_be">
-                <input class="btn btn_en btn-primary" type="button" value="Nuevo">
-                <input class="btn btn_en btn-primary" type="button" value="Ver BT">
-            </div>-->
-        </div>
     </Div>
+    <!-- Modal -->
+    <div class="modal fade" id="informacion" tabindex="-1" aria-labelledby="informacion" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="informacion">Información</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <h6>Indicaciones</h6>
+                    <p>
+                        Seleccione la ruta que desea conocer un beneficio esperado, luego ingrese la cantidad de pasajeros en cada una de las clases que cuenta la empresa, posteriormente puede seleccionar el botón calcular para ser dirigido a la pantalla de resultados.
+                    </p>
+                    <p>
+                        El botón limpiar dejará en blanco las cajas de texto para que pueda ingresar los datos nuevamente.
+                    </p>
+                </div>
+                <hr>
+                <div>
+                    <h6>Rutas disponibles</h6>
+                    <ol>
+                        <li>
+                            Tegucigalpa – Comayagua
+                            <ul>
+                                <li>Distancia: 91.1 Km</li>
+                                <li>Gasto Combustible: L. 2,448.38</li>
+                                <li>Valor de pasaje:
+                                    <ul>
+                                        <li>Primera Clase: L. 285.00</li>
+                                        <li>Normal: L. 200.00</li>
+                                        <li>Niños y 3ra edad: L. 145.00</li>
+                                    </ul>
+                                </li>
+                                <li>Peaje:
+                                    <ul>
+                                        <li>Cantidad: 1</li>
+                                        <li>Precio: L. 87.00</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Tegucigalpa – San Pedro Sula
+                            <ul>
+                                <li>Distancia: 251.0 Km</li>
+                                <li>Gasto Combustible: L. 6,748.47</li>
+                                <li>Valor de pasaje:
+                                    <ul>
+                                        <li>Primera Clase: L. 785.00</li>
+                                        <li>Normal: L. 550.00</li>
+                                        <li>Niños y 3ra edad: L. 395.00</li>
+                                    </ul>
+                                </li>
+                                <li>Peaje:
+                                    <ul>
+                                        <li>Cantidad: 3</li>
+                                        <li>Precio: L. 87.00</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Tegucigalpa – Siguatepeque
+                            <ul>
+                                <li>Distancia: 125.0 Km</li>
+                                <li>Gasto Combustible: L. 3,359.46</li>
+                                <li>Valor de pasaje:
+                                    <ul>
+                                        <li>Primera Clase: L. 390.00</li>
+                                        <li>Normal: L. 225.00</li>
+                                        <li>Niños y 3ra edad: L. 200.00</li>
+                                    </ul>
+                                </li>
+                                <li>Peaje:
+                                    <ul>
+                                        <li>Cantidad: 2</li>
+                                        <li>Precio: L. 87.00</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Tegucigalpa – Santa Bárbara la Campa
+                            <ul>
+                                <li>Distancia: 207.9 Km</li>
+                                <li>Gasto Combustible: L. 5,587.44</li>
+                                <li>Valor de pasaje:
+                                    <ul>
+                                        <li>Primera Clase: L. 650.00</li>
+                                        <li>Normal: L. 455.00</li>
+                                        <li>Niños y 3ra edad: L. 325.00</li>
+                                    </ul>
+                                </li>
+                                <li>Peaje:
+                                    <ul>
+                                        <li>Cantidad: 2</li>
+                                        <li>Precio: L. 87.00</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Tegucigalpa – Santa Rosa de Copán
+                            <ul>
+                                <li>Distancia: 320.8 Km</li>
+                                <li>Gasto Combustible: L. 8,621.71</li>
+                                <li>Valor de pasaje:
+                                    <ul>
+                                        <li>Primera Clase: L. 1,000.00</li>
+                                        <li>Normal: L. 700.00</li>
+                                        <li>Niños y 3ra edad: L. 500.00</li>
+                                    </ul>
+                                </li>
+                                <li>Peaje:
+                                    <ul>
+                                        <li>Cantidad: 2</li>
+                                        <li>Precio: L. 87.00</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Tegucigalpa – Olancho
+                            <ul>
+                                <li>Distancia: 235.9 Km</li>
+                                <li>Gasto Combustible: L. 6,339.96</li>
+                                <li>Valor de pasaje:
+                                    <ul>
+                                        <li>Primera Clase: L. 740.00</li>
+                                        <li>Normal: L. 520.00</li>
+                                        <li>Niños y 3ra edad: L. 370.00</li>
+                                    </ul>
+                                </li>
+                                <li>Peaje:
+                                    <ul>
+                                        <li>Cantidad: 0</li>
+                                        <li>Precio: L. 87.00</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Tegucigalpa – Choluteca
+                            <ul>
+                                <li>Distancia: 147.1 Km</li>
+                                <li>Gasto Combustible: L. 3953.4</li>
+                                <li>Valor de pasaje:
+                                    <ul>
+                                        <li>Primera Clase: L. 460.00</li>
+                                        <li>Normal: L. 325.00</li>
+                                        <li>Niños y 3ra edad: L. 230.00</li>
+                                    </ul>
+                                </li>
+                                <li>Peaje:
+                                    <ul>
+                                        <li>Cantidad: 0</li>
+                                        <li>Precio: L. 87.00</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Tegucigalpa – La Ceiba
+                            <ul>
+                                <li>Distancia: 401.7 Km</li>
+                                <li>Gasto Combustible: L. 10,795.94</li>
+                                <li>Valor de pasaje:
+                                    <ul>
+                                        <li>Primera Clase: L. 1255.00</li>
+                                        <li>Normal: L. 880.00</li>
+                                        <li>Niños y 3ra edad: L. 630.00</li>
+                                    </ul>
+                                </li>
+                                <li>Peaje:
+                                    <ul>
+                                        <li>Cantidad: 3</li>
+                                        <li>Precio: L. 87.00</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Tegucigalpa – Trujillo
+                            <ul>
+                                <li>Distancia: 411.1 Km</li>
+                                <li>Gasto Combustible: L. 11048.58</li>
+                                <li>Valor de pasaje:
+                                    <ul>
+                                        <li>Primera Clase: L. 1285.00</li>
+                                        <li>Normal: L. 900.00</li>
+                                        <li>Niños y 3ra edad: L. 645.00</li>
+                                    </ul>
+                                </li>
+                                <li>Peaje:
+                                    <ul>
+                                        <li>Cantidad: 3</li>
+                                        <li>Precio: L. 87.00</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Tegucigalpa – Danlí
+                            <ul>
+                                <li>Distancia: 94.3 Km</li>
+                                <li>Gasto Combustible: L. 2,504.37</li>
+                                <li>Valor de pasaje:
+                                    <ul>
+                                        <li>Primera Clase: L. 295.00</li>
+                                        <li>Normal: L. 210.00</li>
+                                        <li>Niños y 3ra edad: L. 150.00</li>
+                                    </ul>
+                                </li>
+                                <li>Peaje:
+                                    <ul>
+                                        <li>Cantidad: 0</li>
+                                        <li>Precio: L. 87.00</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <hr>
+                <div>
+                    <h6>Valor del asiento por Km:</h6>
+                    <ol>
+                        <li>Primera Clase: L. 3.12</li>
+                        <li>Normal: L. 2.19</li>
+                        <li>Niños y Tercera Edad: L. 1.56</li>
+                    </ol>
+                </div>
+                <div>
+                    <h6>Aspectos importantes del combustible</h6>
+                    <ol>
+                        <li>Tipo: Diesel</li>
+                        <li>Precio por galón: L. 77.60 </li>
+                        <li>Rendimiento de combustible: 2.887 Km / galon</li>
+                    </ol>
+                </div>
+                <div>
+                    <h6>Consideraciones para gasto fijo</h6>
+                    <p>Alimentación:<p>
+                    <ol>
+                        <li>L. 50 si # de Km <= 320.8 km</li>
+                        <li>L. 120 si # de km > 320.8 Km (En cuenta 2 comidas por la distancia)</li>
+                        <li>Sumado el chofer y el ayudante</li>
+                    </ol>
+                </div>
+                <br><hr><br>
+                <div>
+                    <small>Las distancias se obtuvierón en Google Maps, el precio del combustible según el actual en el país.</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn_en btn-primary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+        </div>
+    </div>
 </body>
 </html>
