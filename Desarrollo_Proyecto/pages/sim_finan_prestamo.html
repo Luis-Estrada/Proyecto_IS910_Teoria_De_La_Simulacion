@@ -10,6 +10,10 @@
     
     <!-- Css propios -->
     <link rel="stylesheet" href="../css/style.css">
+
+        <!--JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
     
     <title>Mensualidad Préstamo</title>
 </head>
@@ -22,7 +26,7 @@
                     <button class="btn btn_en btn-primary">Menú</button>
                 </a>
 
-                <button class="btn btn_en btn-primary">Ayuda</button>
+                <button type="button" class="btn btn_en btn-primary" data-bs-toggle="modal" data-bs-target="#informacion">Ayuda</button>
 
                 <a href="sim_finan_principal.html">
                     <button class="btn btn_en btn-primary">Opciones</button>
@@ -36,93 +40,142 @@
                 <p>Mediante el presente simulador podrá saber cuánto deberá pagar cada mes en un determinado préstamo.</p>
             </div>
             <div class="cont_form_prest center">
-                <form action="">
-                    <div class="items-form ">
-                        <label class="Col-3" for="cap_inicial">Capital Inicial</label>
-                        <input class="Col-3" type="text" id="cap_inicial">
-                        <select class="Col-3" name="" id="">
-                            <option value=""> L. </option>
-                            <option value=""> &dollar; </option>
-                            <option value=""> &euro; </option>
-                        </select>
+                        <div class="row mt-3">
+                            <div class="col-6">
+                                <div class="col-7">
+                                    <div class="cont_form_futuro center">
+                                    <form action="" id="miForm">
+                                        <div class="items-form ">
+                                            <label class="Col-3" for="monto">Capital Inicial</label>
+                                            <input class="Col-3" type="text" id="monto">
+                                            <select class="Col-3" name="" id="moneda">
+                                                <option value="lempira"> L. </option>
+                                                <option value="dolar"> &dollar; </option>
+                                                <!--<option value="euro"> &euro; </option>-->
+                                            </select>
+                                        </div>
+                                        <div class="items-form">
+                                            <label class="Col-5" for="interes">Tipo de INA</label>
+                                            <input class="Col-5" type="text" id="interes">
+                                            <select class="Col-2" name="" id="" disabled>
+                                                <option value="%" selected>%</option>
+                                            </select>
+                                            <!--<label class="Col-3" for="">%</label>-->
+                                        </div>
+                                        <div class="items-form">
+                                            <label class="" for="tiempo">Plazo</label>
+                                            <input class="" type="text" id="tiempo">
+                                            <select class="" name="" id="">
+                                                <option value="anio">Años</option>
+                                                <option value="meses">Meses</option>
+                                            </select>
+                                        </div>
+                                        <div class="items-form">
+                                            <button class="btn btn_en btn-primary" type="button"  id="btnCalcular">Calcular</button>
+                                        </div>
+                                    </form>
+        
+                                
+                            </div>
+                        </div>
+
+                        
+
+
                     </div>
-                    <div class="items-form">
-                        <label class="Col-5" for="ina">Tipo de INA</label>
-                        <input class="Col-5" type="text" id="ina">
-                        <select class="Col-2" name="" id="" disabled>
-                            <option value="" selected>%</option>
-                        </select>
-                        <!--<label class="Col-3" for="">%</label>-->
+                    <div class="col-6">
+                        
+
+
+
                     </div>
-                    <div class="items-form">
-                        <label class="" for="plazo">Plazo</label>
-                        <input class="" type="text" id="plazo">
-                        <select class="" name="" id="">
-                            <option value="">Años</option>
-                            <option value="">Meses</option>
-                        </select>
-                    </div>
-                    <div class="items-form">
-                        <button class="btn btn_en btn-primary" type="button">Calcular</button>
-                    </div>
-                </form>
+                </div>
+
             </div>
             <br>
-            <div class="tabla_amortizacion center">
+            <div class="tabla_amortizacion center" id="tabla_amortizacion">
                 <div class="items-form">
-                    <label for="">Tabla de Amortización</label>
+                    <!-- <label for="">Tabla de Amortización</label> -->
+                    <div class="center">
+                        <h5>Tabla de Amortización</h5>
+                    </div>
                     <hr>
                 </div>
                 <br>
                 <div class="">
-                    <!-- Datos de ejemplo -->
-                    <table class="table">
+                    <!-- Tabla de amortizacion -->
+                    <table id="lista-tabla" class="table">
                         <thead>
-                          <tr>
-                            <th scope="col">Mensualidad</th>
-                            <th scope="col">Cuota</th>
-                            <th scope="col">Interese</th>
-                            <th scope="col">Capital</th>
-                            <th scope="col">Capital Pendiente</th>
-                          </tr>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Cuota</th>
+                                <th>Capital</th>
+                                <th>Interés</th>
+                                <th>Saldo</th>
+                            </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>10000</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>438.71</td>
-                            <td>41.67</td>
-                            <td>397.04</td>
-                            <td>9602.96</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>438.71</td>
-                            <td>40.01</td>
-                            <td>398.7</td>
-                            <td>9204.26</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                        <tbody></tbody>
+                    </table>
                 </div>
             </div>
-            <div class="container">
+            <div class="container" id="cntBtnLimpiar">
                 <div class="row">
                   <div class="col align-self-start"></div>
                   <div class="col align-self-center"></div>
                   <div class="col align-self-end">
-                    <button class="btn btn_en btn-primary col-6" type="button" >Limpiar</button>
+                    <button class="btn btn_en btn-primary col-6" type="button" onclick="limpiar()" id="btnLimpiar" >Limpiar</button>
                   </div>
                 </div>
             </div>
             <br>
         </div>
     </Div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="informacion" tabindex="-1" aria-labelledby="informacion" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="informacion">Información</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <h6>Indicaciones</h6>
+                            <p> 
+                                Mediante el presente simulador podrá saber conocer la correspondiente cuota que se espera pagar al sacar un prestamo en un período determinado. <br> <br>
+                                Introduzca el monto, ya sea en moneda nacional (<b>lempira</b>) como internacional (<b>dolar</b>) seguidamente en el plazo de tiempo en que le gustaria conocer el interés acumulado generado (<b>años, meses</b>).
+                                Tendrá como resultado una tabla donde describa las fechas,cuota, capital, interes y saldo en el cual es el metodo que usan los bancos para calculas los montos ha pagar.
+                            </p>
+                            <p>
+                                La cuota fija de amortización está compuesta por los intereses del préstamo y por la parte del préstamo que amortizamos, 
+                                pero no en la misma cantidad. Es decir, que aunque la cuota sea fija, la cantidad de amortización e intereses que componen la 
+                                cuota van variando a lo largo de la vida de nuestra hipoteca.
+                            </p>
+
+                            <p>
+                                <h5>Factores a tener en cuenta en el sistema de amortización francés</h5>
+                                <ol>
+                                    <li>Capital prestado</li>
+                                    <li>Tipo de interés</li>
+                                    <li>Duración del préstamo</li>
+                                </ol>
+                            </p>
+                            <p>
+                                El botón limpiar dejará en blanco las cajas de texto para que pueda ingresar los datos nuevamente.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn_en btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+            </div>
+         </div>
+     </div>
+
+        <!-- carga de controladores -->
+        <script src="../js/controlador_amortizacion.js"></script>
+        <script src="../js/moment.js"></script>
 </body>
 </html>
