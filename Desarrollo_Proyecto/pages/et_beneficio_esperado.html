@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.css">
-    
+
     <!-- Css propios -->
     <link rel="stylesheet" href="../css/style.css">
 
     <!--JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../js/bootstrap.js"></script>
-    
     <title>Beneficio esperado</title>
 </head>
 <body>
@@ -35,7 +34,7 @@
             <form action="">
                 <div class="items-form">
                     <label class="col-5" for="ruta">Ruta seleccionada</label>
-                    <input type="text" id="ruta">
+                    <input type="text" id="ruta" disabled>
                     <!--<select class="col-5 " name="ruta" id="ruta"></select>-->
                 </div>
                 <div class="items-form">
@@ -44,7 +43,7 @@
                 </div>
                 <div class="items-form">
                     <label for="ingresos" class="col-5">Ingresos</label>
-                    <input id="ingresos" type="text" class="col-5">
+                    <input id="ingresos" type="text" class="col-5" disabled>
                 </div>
                 <div class="items-form">
                     <label for="">Gastos invertidos</label>
@@ -52,11 +51,11 @@
                 </div>
                 <div class="items-form">
                     <label for="gasto_variable" class="col-5">Gasto variable</label>
-                    <input id="gasto_variable" type="text" class="col-5">
+                    <input id="gasto_variable" type="text" class="col-5" disabled>
                 </div>
                 <div class="items-form">
                     <label for="gasto_fijo" class="col-5">Gasto Fijo</label>
-                    <input id="gasto_fijo" type="text" class="col-5">
+                    <input id="gasto_fijo" type="text" class="col-5" disabled>
                 </div>
                 <div class="items-form">
                     <label for="">Beneficio esperado</label>
@@ -64,14 +63,18 @@
                 </div>
                 <div class="items-form">
                     <label for="beneficio" class="col-5">Beneficio Esperado</label>
-                    <input id="beneficio" type="text" class="col-5">
+                    <input id="beneficio" type="text" class="col-5" disabled>
                 </div>
                 <div class="button-form_be row">
                     <div class="col-6">
-                        <input class="btn btn_en btn-primary" type="button" value="Nuevo">
+                        <a href="./et_seleccion_rutas.html">
+                            <input class="btn btn_en btn-primary" type="button" value="Nuevo">
+                        </a>
                     </div>
                     <div class="col-6">
-                        <input class="btn btn_en btn-primary" type="button" value="Ver BT">
+                        <a href="./et_beneficio_total.html">
+                            <input class="btn btn_en btn-primary" type="button" value="Ver BT">
+                        </a>
                     </div>
                 </div>
             </form>
@@ -114,7 +117,7 @@
                                         <li>Niños y 3ra edad: L. 145.00</li>
                                     </ul>
                                 </li>
-                                <li>Peaje: 
+                                <li>Peaje:
                                     <ul>
                                         <li>Cantidad: 1</li>
                                         <li>Precio: L. 87.00</li>
@@ -134,7 +137,7 @@
                                         <li>Niños y 3ra edad: L. 395.00</li>
                                     </ul>
                                 </li>
-                                <li>Peaje: 
+                                <li>Peaje:
                                     <ul>
                                         <li>Cantidad: 3</li>
                                         <li>Precio: L. 87.00</li>
@@ -154,7 +157,7 @@
                                         <li>Niños y 3ra edad: L. 200.00</li>
                                     </ul>
                                 </li>
-                                <li>Peaje: 
+                                <li>Peaje:
                                     <ul>
                                         <li>Cantidad: 2</li>
                                         <li>Precio: L. 87.00</li>
@@ -174,7 +177,7 @@
                                         <li>Niños y 3ra edad: L. 325.00</li>
                                     </ul>
                                 </li>
-                                <li>Peaje: 
+                                <li>Peaje:
                                     <ul>
                                         <li>Cantidad: 2</li>
                                         <li>Precio: L. 87.00</li>
@@ -194,7 +197,7 @@
                                         <li>Niños y 3ra edad: L. 500.00</li>
                                     </ul>
                                 </li>
-                                <li>Peaje: 
+                                <li>Peaje:
                                     <ul>
                                         <li>Cantidad: 2</li>
                                         <li>Precio: L. 87.00</li>
@@ -214,7 +217,7 @@
                                         <li>Niños y 3ra edad: L. 370.00</li>
                                     </ul>
                                 </li>
-                                <li>Peaje: 
+                                <li>Peaje:
                                     <ul>
                                         <li>Cantidad: 0</li>
                                         <li>Precio: L. 87.00</li>
@@ -234,7 +237,7 @@
                                         <li>Niños y 3ra edad: L. 230.00</li>
                                     </ul>
                                 </li>
-                                <li>Peaje: 
+                                <li>Peaje:
                                     <ul>
                                         <li>Cantidad: 0</li>
                                         <li>Precio: L. 87.00</li>
@@ -254,7 +257,7 @@
                                         <li>Niños y 3ra edad: L. 630.00</li>
                                     </ul>
                                 </li>
-                                <li>Peaje: 
+                                <li>Peaje:
                                     <ul>
                                         <li>Cantidad: 3</li>
                                         <li>Precio: L. 87.00</li>
@@ -274,7 +277,7 @@
                                         <li>Niños y 3ra edad: L. 645.00</li>
                                     </ul>
                                 </li>
-                                <li>Peaje: 
+                                <li>Peaje:
                                     <ul>
                                         <li>Cantidad: 3</li>
                                         <li>Precio: L. 87.00</li>
@@ -294,7 +297,7 @@
                                         <li>Niños y 3ra edad: L. 150.00</li>
                                     </ul>
                                 </li>
-                                <li>Peaje: 
+                                <li>Peaje:
                                     <ul>
                                         <li>Cantidad: 0</li>
                                         <li>Precio: L. 87.00</li>
@@ -341,5 +344,6 @@
         </div>
         </div>
     </div>
+    <script src="../js/controlador_beneficio_esperado.js"></script>
 </body>
 </html>
