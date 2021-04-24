@@ -10,10 +10,13 @@
 
     <!-- Css propios -->
     <link rel="stylesheet" href="../css/style.css">
-
+    
     <!--JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../js/bootstrap.js"></script>
+
+    <!--Graficas  -->
+    <script  type="text/javascript" src="../js/chart.min.js" charset="utf-8"></script>
 
     <title>Seleccion de rutas</title>
 </head>
@@ -32,10 +35,23 @@
             <hr>
         </div>
         <div class="cont_form center">
-            <form action="">
+            <form action="et_beneficio_total.php" method="post">
                 <div class="items-form">
                     <label class="col-5" for="ruta">Seleccionar Ruta</label>
-                    <select class="col-5 " name="ruta" id="ruta"></select>
+                    <select class="col-5 " name="ruta" id="ruta">
+                        <option value="" selected></option>
+                        <option value="">Tegucigalpa – Comayagua</option>
+                        <option value="">Tegucigalpa – San Pedro Sula</option>
+                        <option value="">Tegucigalpa – Siguatepeque</option>
+                        <option value="">Tegucigalpa – Santa Bárbara la Campa</option>
+                        <option value="">Tegucigalpa – Santa Rosa de Copán</option>
+                        <option value="">Tegucigalpa – Olancho</option>
+                        <option value="">Tegucigalpa – Choluteca</option>
+                        <option value="">Tegucigalpa – La Ceiba</option>
+                        <option value="">Tegucigalpa – Trujillo</option>
+                        <option value="">Tegucigalpa – Danlí</option>
+                    </select>
+
                 </div><br>
                 <div class="items-form">
                     <label class="col-5" for="bus">Seleccionar Ruta</label>
