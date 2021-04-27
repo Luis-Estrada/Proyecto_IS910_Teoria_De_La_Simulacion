@@ -11,7 +11,7 @@
     <!-- Css propios -->
     <link rel="stylesheet" href="../css/style.css">
 
-        <!--JQuery-->
+    <!--JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../js/bootstrap.js"></script>
     
@@ -44,48 +44,53 @@
                             <div class="col-6">
                                 <div class="col-7">
                                     <div class="cont_form_futuro center">
-                                    <form action="" id="miForm">
-                                        <div class="items-form ">
-                                            <label class="Col-3" for="monto">Capital Inicial</label>
-                                            <input class="Col-3" type="text" id="monto">
-                                            <select class="Col-3" name="" id="moneda">
-                                                <option value="lempira"> L. </option>
-                                                <option value="dolar"> &dollar; </option>
-                                                <!--<option value="euro"> &euro; </option>-->
-                                            </select>
-                                        </div>
-                                        <div class="items-form">
-                                            <label class="Col-5" for="interes">Tipo de INA</label>
-                                            <input class="Col-5" type="text" id="interes">
-                                            <select class="Col-2" name="" id="" disabled>
-                                                <option value="%" selected>%</option>
-                                            </select>
-                                            <!--<label class="Col-3" for="">%</label>-->
-                                        </div>
-                                        <div class="items-form">
-                                            <label class="" for="tiempo">Plazo</label>
-                                            <input class="" type="text" id="tiempo">
-                                            <select class="" name="" id="">
-                                                <option value="anio">Años</option>
-                                                <option value="meses">Meses</option>
-                                            </select>
-                                        </div>
-                                        <div class="items-form">
-                                            <button class="btn btn_en btn-primary" type="button"  id="btnCalcular">Calcular</button>
-                                        </div>
-                                    </form>
-        
-                                
+
+                                        <form action="" id="miForm">
+                                            <div class="items-form ">
+                                                <label class="Col-3" for="monto">Capital Inicial</label>
+                                                <input class="Col-3" type="text" id="monto">
+                                                <select class="Col-3" name="" id="moneda">
+                                                    <option value="lempira"> L. </option>
+                                                    <option value="dolar"> &dollar; </option>
+                                                    <!--<option value="euro"> &euro; </option>-->
+                                                </select>
+                                            </div>
+                                            <div class="items-form">
+                                                <label class="Col-5" for="interes">Tipo de INA</label>
+                                                <input class="Col-5" type="text" id="interes">
+                                                <select class="Col-2" name="" id="" disabled>
+                                                    <option value="%" selected>%</option>
+                                                </select>
+                                                <!--<label class="Col-3" for="">%</label>-->
+                                            </div>
+                                            <div class="items-form">
+                                                <label class="" for="tiempo">Plazo</label>
+                                                <input class="" type="text" id="tiempo">
+                                                <select class="" name="" id="tipoTiempo">
+                                                    <option value="anios">Años</option>
+                                                    <option value="meses">Meses</option>
+                                                </select>
+                                            </div>
+                                            <div class="items-form">
+                                                <label class="Col-5" for="amortizacion">Tipo de amortizacion</label>
+                                                <!-- <input class="Col-5" type="text" id="amorticacionText" disabled> -->
+                                                <select class="3" name="" id="amortizacion" >
+                                                    <option value="frances">Sistema francés</option>
+                                                    <option value="aleman">Sistema alemán</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group mt-2 mb-3 alert alert-danger" hidden id="alert-error">
+                                                Debes llenar todos los campos!
+                                            </div>
+                                            <div class="items-form">
+                                                <button class="btn btn_en btn-primary" type="button"  id="btnCalcular">Calcular</button>
+                                            </div>
+                                        </form>
+
                             </div>
                         </div>
-
-                        
-
-
                     </div>
                     <div class="col-6">
-                        
-
 
 
                     </div>
@@ -174,8 +179,9 @@
          </div>
      </div>
 
-        <!-- carga de controladores -->
+        <!-- carga de controladores para la amortizacion francesa -->
         <script src="../js/controlador_amortizacion.js"></script>
+        <!-- Permita controlar las fechas -->
         <script src="../js/moment.js"></script>
 </body>
 </html>
